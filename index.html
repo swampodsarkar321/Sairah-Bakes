@@ -170,7 +170,7 @@ section{padding:80px 0;position:relative}
 .card:hover .card-img img{transform:scale(1.08)}
 .card-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(31,18,12,.3));pointer-events:none}
 .badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);color:var(--pink-deep);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:6px 14px;border-radius:100px;border:1px solid rgba(232,85,106,.15);z-index:1}
-.price-tag{position:absolute;bottom:14px;right:14px;background:linear-gradient(135deg,var(--chocolate),var(--chocolate-soft));color:#fff;font-size:.82rem;font-weight:700;padding:7px 16px;border-radius:100px;box-shadow:0 4px 16px rgba(61,34,20,.3);z-index:1}
+.price-tag{display:none!important}
 .card-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
 .card-body h3{font-size:1.15rem;color:var(--chocolate);margin-bottom:2px}
 .flavor{font-size:.84rem;color:var(--pink-deep);font-weight:600;display:flex;align-items:center;gap:6px}
@@ -650,9 +650,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <p class="section-sub reveal reveal-delay-2">যারা আমাদের কেক ভালোবেসেছেন — তাদের মুখ থেকেই শুনুন।</p>
     </div>
     <div class="rev-grid">
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>"অসাধারণ স্বাদ এবং নিখুঁত ডিজাইন! প্রজাপতি থিমটি হুবহু রেফারেন্সের মতো হয়েছে। সবাই খুব প্রশংসা করেছে।"</p><div class="rev-user"><span class="avatar avatar-1">N</span><div><b>Nusrat Jahan</b><small>জন্মদিনের কেক • রংপুর</small></div></div></div>
-      <div class="rev reveal reveal-delay-1"><div class="stars">★★★★★</div><p>"বিবাহ অনুষ্ঠানের জন্য ২ কেজি কেক অর্ডার করেছিলাম। অত্যন্ত ফ্রেশ, নরম এবং প্রিমিয়াম প্যাকেজিং ছিল। সময়মতো ডেলিভারি ও সহজ বিকাশ পেমেন্ট।"</p><div class="rev-user"><span class="avatar avatar-2">T</span><div><b>Tanvir Hasan</b><small>বিয়ের কেক • উত্তরা</small></div></div></div>
-      <div class="rev reveal reveal-delay-2"><div class="stars">★★★★★</div><p>"রেড ভেলভেট কেকটি অত্যন্ত সফট ও ক্রিমি ছিল। কেকের লেখাটি মায়ের খুব পছন্দ হয়েছে। ইনশাআল্লাহ আবার অর্ডার করব।"</p><div class="rev-user"><span class="avatar avatar-3">F</span><div><b>Fatema Akter</b><small>রেড ভেলভেট • মিরপুর</small></div></div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>"মেয়ের ৬ষ্ঠ জন্মদিনের প্রজাপতি কেকটা ধাপে বিকেলে ডেলিভারি পেয়েছি। হুবহু ছবির মতো ডিজাইন, খেতে অসম্ভব মজা। বাচ্চারা সবাই Sairah Bakes এর ফ্যান হয়ে গেছে!"</p><div class="rev-user"><span class="avatar avatar-1">N</span><div><b>Nusrat Jahan</b><small>জন্মদিনের কেক • ধাপ, রংপুর</small></div></div></div>
+      <div class="rev reveal reveal-delay-1"><div class="stars">★★★★★</div><p>"ছোট ভাইয়ের জন্মদিনে ১.৫ কেজি চকলেট কেক নিয়েছিলাম। CO বাজার, রংপুরে সন্ধ্যায় একদম সময়মতো ডেলিভারি। প্যাকেজিং দেখে মনে হচ্ছিল প্রিমিয়াম শপের কেক, স্বাদে সবাই মুগ্ধ।"</p><div class="rev-user"><span class="avatar avatar-2">T</span><div><b>Tanvir Hasan</b><small>জন্মদিনের কেক • CO বাজার, রংপুর</small></div></div></div>
+      <div class="rev reveal reveal-delay-2"><div class="stars">★★★★★</div><p>"মায়ের জন্য রেড ভেলভেট অর্ডার করেছিলাম। মেডিকেল মোড়ে দুপুরের মধ্যেই ডেলিভারি পেয়েছি। ক্রিমটা হালকা মিষ্টি, লেখাটা খুব সুন্দর হয়েছে — মা ভীষণ খুশি।"</p><div class="rev-user"><span class="avatar avatar-3">F</span><div><b>Fatema Akter</b><small>রেড ভেলভেট • মেডিকেল মোড়, রংপুর</small></div></div></div>
     </div>
   </div>
 </section>
@@ -999,6 +999,10 @@ function calcOrder(){
   const qty = Math.max(1, +document.getElementById("oQty").value || 1);
   const u = unitPrice(cake, size);
   const sub = u*qty, del = sub >= BUSINESS_CONFIG.freeDeliveryOver ? 0 : BUSINESS_CONFIG.deliveryFee;
+  const priceBox = document.querySelector('#orderModal .price-box');
+  // Custom cake (জন্মদিনের কাস্টম কেক) never shows price
+  const isCustom = cake.cat === 'birthday' || cake.name.includes('কাস্টম');
+  if(priceBox) priceBox.style.display = isCustom ? 'none' : 'flex';
   document.getElementById("orderTotal").textContent = tk(sub+del);
   document.getElementById("orderBreak").textContent = `${tk(u)} × ${qty} + delivery ${del?tk(del):"ফ্রি"}`;
   return { cake, size, qty, u, sub, del, total: sub+del };
