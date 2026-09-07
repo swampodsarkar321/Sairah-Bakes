@@ -10,6 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Favicon for Sairah Bakes -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23e8556a'/%3E%3Cstop offset='100%25' stop-color='%23ff9a62'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#e8556a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sairah Bakes">
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiU2FpcmFoIEJha2VzIC0gUmFuZ3B1ciIsInNob3J0X25hbWUiOiJTYWlyYWggQmFrZXMiLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjZmZmOGY1IiwidGhlbWVfY29sb3IiOiIjZTg1NTZhIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMTAwIDEwMCc+JTNDeGRlZnMlM0UlM0NsaW5lYXJHcmFkaWVudCUyMGlkPSdnJyUyMHgxPSUyNzAlMjUnJTIweTE9JTI3MCUyNSUyNyUyMHgyPSUyNzEwMCUyNSUyJyUyMHkyPSUyNzEwMCUyNSUyNyUzRSUzQ3N0b3AlMjBvZmZzZXQ9JTI3MCUyNSUyNyUyMHN0b3AtY29sb3I9JTI3JTIzZTg1NTZhJTI3LyUzRSUzQ3N0b3AlMjBvZmZzZXQ9JTI3MTAwJTI1JTI3JTIwc3RvcC1jb2xvciUzRCUyNyUyM2ZmOWE2MiUyNy8lM0UlM0MvZGVmcyUzRSUzQ3JlY3QlMjB3aWR0aD0lMjcxMDAlMjclMjBoZWlnaHQ9JTI3MTAwJTI3JTIwcng9JTI3MjYlMjclMjBmaWxsPSUyN3VybCglMjNnKSUyNy8lM0UlM0N0ZXh0JTIweD0lMjc1MCUyNSUyNyUyMHk9JTI3NTglMjUlMjclMjBkb21pbmFudC1iYXNlbGluZT0lMjdtaWRkbGUlMjclMjB0ZXh0LWFuY2hvcj0lMjdtaWRkbGUlMjclMjBmb250LXNpemU9JTI3NDglMjclM0UlRTAlOUYlOEUlODIlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCJzaXplcyI6IjEwMHgxMDAiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23e8556a'/%3E%3Cstop offset='100%25' stop-color='%23ff9a62'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E">
 <style>
 /* ======================== DESIGN SYSTEM ======================== */
@@ -433,6 +437,24 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   .foot-grid{grid-template-columns:1fr}
   .hero-cakes-scroll{display:none}
 }
+/* FAQ */
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:16px;margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.faq-q{width:100%;text-align:left;padding:18px 20px;font-weight:600;color:var(--chocolate);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.92rem;cursor:pointer;background:#fff}
+.faq-q span.arr{transition:transform .25s;font-size:1.2rem;color:var(--pink)}
+.faq-item.open .faq-q span.arr{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 20px 18px;color:var(--muted);font-size:.88rem;line-height:1.7;border-top:1px dashed var(--border);margin:0 20px;padding-top:14px}
+.faq-item.open .faq-a{display:block}
+/* Policy */
+.policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.policy-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow-sm)}
+.policy-card h4{color:var(--chocolate);margin-bottom:8px;font-size:1rem}
+.policy-card p{font-size:.85rem;color:var(--muted);line-height:1.7}
+.policy-card ul{margin:8px 0 0 18px;font-size:.85rem;color:var(--muted);line-height:1.7}
+@media(max-width:640px){.policy-grid{grid-template-columns:1fr}}
+/* Order history badge */
+.orders-btn{position:relative;width:48px;height:48px;border-radius:50%;border:2px solid var(--border);background:rgba(255,250,245,.8);display:grid;place-items:center;transition:var(--transition)}
+.orders-btn:hover{border-color:var(--pink);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.orders-count{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;border-radius:100px;background:var(--chocolate);color:#fff;font-size:.68rem;font-weight:700;display:grid;place-items:center;padding:0 5px;border:2px solid var(--cream)}
 @media(max-width:400px){
   .grid{grid-template-columns:1fr}
   .card-img{height:190px}
@@ -458,6 +480,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <a href="#contact">যোগাযোগ</a>
     </nav>
     <div class="nav-actions">
+      <button class="orders-btn" onclick="openOrders()" aria-label="My orders" title="আমার অর্ডার"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span class="orders-count" id="ordersCount" style="display:none">0</span></button>
       <button class="cart-btn" onclick="openCart()" aria-label="Open shopping cart">
         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.2" fill="currentColor" stroke="none"/><circle cx="19" cy="21" r="1.2" fill="currentColor" stroke="none"/><path d="M2.5 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21 8H6.2"/></svg><span class="cart-badge" id="cartBadge">0</span>
       </button>
@@ -487,6 +510,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="hero-btns">
         <a href="#cakes" class="btn btn-pink btn-lg">আপনার কেক অর্ডার করুন →</a>
         <a href="#cakes" class="btn btn-outline btn-lg">কেকগুলো দেখুন</a>
+        <button id="pwaBtn" class="btn btn-dark btn-lg" onclick="installPWA()" style="display:none">📲 অ্যাপ ইনস্টল করুন</button>
       </div>
       <div class="hero-stats">
         <div class="hstat"><b>২,০০০+</b><span>সন্তুষ্ট পরিবার</span></div>
@@ -659,6 +683,46 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 
 <div class="section-divider"></div>
 
+
+<!-- ======================== FAQ ======================== -->
+<section id="faq">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag reveal">❓ প্রশ্নোত্তর</span>
+      <h2 class="section-title serif reveal reveal-delay-1">প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2>
+      <p class="section-sub reveal reveal-delay-2">অর্ডারের আগে এই প্রশ্নগুলো সবাই করেন — উত্তরগুলো এক নজরে।</p>
+    </div>
+    <div style="max-width:780px;margin:0 auto">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">ডিম ছাড়া কেক হয়? <span class="arr">▾</span></button><div class="faq-a">হ্যাঁ, হয়। ভ্যানিলা, চকলেট ও বাটারস্কচ — তিনটিই ডিম ছাড়া করা যায়। অর্ডারের সময় "বিশেষ নির্দেশনা" তে <b>ডিম ছাড়া</b> লিখে দিন। স্বাদে কোনো পার্থক্য হবে না।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">কতক্ষণ আগে অর্ডার করতে হবে? <span class="arr">▾</span></button><div class="faq-a">রেগুলার কেক — <b>১ দিন আগে</b>। কাস্টম/থিম/২-স্তর কেক — <b>২ দিন আগে</b>। রংপুরে একই দিনে ডেলিভারি শুধু সকাল ১০টার আগে অর্ডার করলে সম্ভব।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">ডেলিভারি চার্জ কত? <span class="arr">▾</span></button><div class="faq-a">রংপুর সিটির ভেতর <b>৳100</b>। ৳3000+ অর্ডারে <b>ফ্রি ডেলিভারি</b>। কেকের দাম ক্যাশ অন ডেলিভারি — ডেলিভারি চার্জ চাইলে অগ্রিম বিকাশ/নগদে দিতে পারেন।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">কাস্টম ডিজাইন কীভাবে দেব? <span class="arr">▾</span></button><div class="faq-a">কাস্টম ফর্মে আইডিয়া লিখুন, অর্ডারের পর হোয়াটসঅ্যাপে রেফারেন্স ছবি পাঠান। আমরা ৩০ মিনিটে ডিজাইন কনফার্ম করে দাম জানিয়ে দেব।</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">পেমেন্ট কীভাবে করব? <span class="arr">▾</span></button><div class="faq-a"><b>ক্যাশ অন ডেলিভারি</b> — কেক হাতে পেয়ে টাকা দিন। শুধু ডেলিভারি চার্জ ঐচ্ছিকভাবে বিকাশ/নগদে অগ্রিম দিতে পারেন। কোনো অগ্রিম বাধ্যতামূলক নয়।</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ======================== POLICY ======================== -->
+<section id="policy">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag reveal">📋 নীতিমালা</span>
+      <h2 class="section-title serif reveal reveal-delay-1">রিফান্ড ও ক্যান্সেলেশন</h2>
+      <p class="section-sub reveal reveal-delay-2">রংপুরে ক্যাশ অন ডেলিভারি — স্বচ্ছ ও সহজ নীতি।</p>
+    </div>
+    <div class="policy-grid">
+      <div class="policy-card reveal"><h4>✅ কনফার্মেশন</h4><p>অর্ডারের পর হোয়াটসঅ্যাপ/কলে কনফার্ম করা হয়। কনফার্মের পরই বেকিং শুরু।</p></div>
+      <div class="policy-card reveal reveal-delay-1"><h4>❌ ক্যান্সেল</h4><p>কনফার্মের <b>২ ঘণ্টার মধ্যে</b> ফ্রি ক্যান্সেল। এর পর বেকিং শুরু হলে ক্যান্সেল সম্ভব নয়।</p></div>
+      <div class="policy-card reveal"><h4>🔄 রিফান্ড</h4><p>ক্যাশ অন ডেলিভারি — অগ্রিম নেওয়া হয় না, তাই রিফান্ড প্রযোজ্য নয়। ডেলিভারি চার্জ অগ্রিম দিয়ে থাকলে ভুল/ক্ষতিতে <b>১০০% ফেরত</b>।</p></div>
+      <div class="policy-card reveal reveal-delay-1"><h4>🚚 ক্ষতি/ভুল</h4><p>ডেলিভারিতে ক্ষতি বা ভুল ডিজাইন হলে ছবি পাঠান — <b>২৪ ঘণ্টায় রিপ্লেসমেন্ট বা ফুল রিফান্ড</b>।</p></div>
+    </div>
+    <p style="text-align:center;margin-top:18px;font-size:.82rem;color:var(--muted)">যেকোনো সমস্যায় হোয়াটসঅ্যাপে মেসেজ করুন — আমরা দ্রুত সমাধান করি।</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
 <!-- ======================== CONTACT ======================== -->
 <section id="contact">
   <div class="container">
@@ -697,7 +761,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <p>প্রতিটি কেক একটি গল্প — ভালোবাসা, উদযাপন আর মিষ্টি স্মৃতির।<br>Sairah Bakes — রংপুরের ঘরে ঘরে প্রিমিয়াম হোমমেড কেকের বিশ্বস্ত নাম।</p>
       <div class="socials"><a id="ftFb" href="#" target="_blank" title="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a id="ftIg" href="#" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a><a id="ftWa" href="#" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h5"/></svg></a><a id="ftPh" href="#" title="Call"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.13 1.2.4 2.3.9 3.4a2 2 0 0 1-.6 2.1L8 10a16 16 0 0 0 4.8 4.8l1.2-1.3a2 2 0 0 1 2.1-.6c1.1.5 2.2.8 3.4.9a2 2 0 0 1 1.7 2z"/></svg></a></div>
     </div>
-    <div><h4>এক নজরে</h4><ul class="foot-links"><li><a href="#home">হোম</a></li><li><a href="#cakes">কেক</a></li><li><a href="#custom">কাস্টম কেক</a></li><li><a href="#why">আমাদের সম্পর্কে</a></li><li><a href="#reviews">রিভিউ</a></li></ul></div>
+    <div><h4>এক নজরে</h4><ul class="foot-links"><li><a href="#home">হোম</a></li><li><a href="#cakes">কেক</a></li><li><a href="#custom">কাস্টম কেক</a></li><li><a href="#why">আমাদের সম্পর্কে</a></li><li><a href="#reviews">রিভিউ</a></li><li><a href="#faq">FAQ</a></li><li><a href="#policy">নীতিমালা</a></li></ul></div>
     <div><h4>যোগাযোগ</h4><ul class="foot-links"><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.1-6-10a6 6 0 1 1 12 0c0 4.9-6 10-6 10z"/><circle cx="12" cy="11" r="2.5"/></svg> <span id="ftAddr">—</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.13 1.2.4 2.3.9 3.4a2 2 0 0 1-.6 2.1L8 10a16 16 0 0 0 4.8 4.8l1.2-1.3a2 2 0 0 1 2.1-.6c1.1.5 2.2.8 3.4.9a2 2 0 0 1 1.7 2z"/></svg> <span id="ftPhone">—</span></li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> <span id="ftPay">—</span></li></ul></div>
   </div>
   <div class="copy">© <span id="year"></span> <span id="ftName2">Sairah Bakes</span> • <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="none" style="vertical-align:-2px;margin:0 3px"><path d="M12 21s-6.5-4.35-8.8-8.7A4.5 4.5 0 0 1 12 5a4.5 4.5 0 0 1 8.8 6.3C18.5 15.65 12 21 12 21z"/></svg> ভালোবাসায় বাংলাদেশে তৈরি • ক্যাশ অন ডেলিভারি</div>
@@ -810,6 +874,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </div>
 
+
+<!-- ======================== ORDERS HISTORY ======================== -->
+<div class="modal" id="ordersModal">
+  <div class="modal-bg" onclick="closeModal('ordersModal')"></div>
+  <div class="modal-card">
+    <h3 class="serif">📦 আমার অর্ডার</h3>
+    <p class="modal-sub">আপনার সব অর্ডার এই ফোনে সেভ থাকে (LocalStorage)।</p>
+    <div id="ordersList" style="display:flex;flex-direction:column;gap:12px;max-height:55vh;overflow-y:auto"></div>
+    <div class="modal-btns"><button class="btn btn-outline" onclick="closeModal('ordersModal')">বন্ধ করুন</button><button class="btn btn-dark" onclick="clearOrders()">সব মুছে ফেলুন</button></div>
+  </div>
+</div>
+
 <div id="toasts"></div>
 
 <script>
@@ -826,6 +902,7 @@ const BUSINESS_CONFIG = {
     facebook: "https://facebook.com/",
     instagram: "https://instagram.com/",
     address: "Dhap Hajipara Mor, Rangpur Sadar, Rangpur",
+    map: "https://www.google.com/maps/search/?api=1&query=Dhap+Hajipara+Mor+Rangpur",
     deliveryFee: 100,
     freeDeliveryOver: 3000
 };
@@ -859,13 +936,13 @@ function initConfig(){
   ctPhone.textContent = "+" + c.phone; ctPhone.href = "tel:+" + c.phone;
   ctWa.textContent = "+" + c.whatsapp; ctWa.href = "https://wa.me/" + c.whatsapp;
   ctFb.href = c.facebook; ctIg.href = c.instagram;
-  ctAddr.textContent = c.address;
+  ctAddr.innerHTML = `<a href="${c.map}" target="_blank" style="color:var(--pink-deep);text-decoration:underline">${c.address} <small>↗ ম্যাপ</small></a>`;
   ctPay.textContent = "ক্যাশ অন ডেলিভারি (ডেলিভারি চার্জ " + (c.deliveryFee? tk(c.deliveryFee)+" ঐচ্ছিক অগ্রিম":"ফ্রি") + ")";
   ctWaBtn.href = "https://wa.me/" + c.whatsapp + "?text=" + encodeURIComponent("হ্যালো " + c.name + "! আমি কেক অর্ডার করতে চাই। 🎂");
   ctCallBtn.href = "tel:+" + c.phone;
   ftFb.href = c.facebook; ftIg.href = c.instagram;
   ftWa.href = "https://wa.me/" + c.whatsapp; ftPh.href = "tel:+" + c.phone;
-  ftAddr.textContent = c.address; ftPhone.textContent = "+" + c.phone;
+  ftAddr.innerHTML = `<a href="${c.map}" target="_blank" style="color:#c9ae9f;text-decoration:underline">${c.address}</a>`; ftPhone.textContent = "+" + c.phone;
   ftPay.textContent = "ক্যাশ অন ডেলিভারি • ডেলিভারি চার্জ বিকাশ/নগদে " + c.bikash;
   floatWa.href = "https://wa.me/" + c.whatsapp + "?text=" + encodeURIComponent("হ্যালো! আমি কেক চাই 🎂");
   document.getElementById("bkNum").textContent = c.bikash;
@@ -1167,10 +1244,37 @@ const navObserver = new IntersectionObserver((entries)=>{
 }, { threshold:0.3 });
 sections.forEach(s=>navObserver.observe(s));
 
+
+/* FAQ toggle */
+function toggleFaq(btn){ const item=btn.parentElement; item.classList.toggle('open'); }
+/* Orders */
+function openOrders(){ renderOrders(); openModal('ordersModal'); }
+function renderOrders(){
+  const list = load("sairahBakes_orders", []);
+  const el=document.getElementById("ordersList");
+  const cnt=document.getElementById("ordersCount");
+  if(cnt){ if(list.length){ cnt.style.display='grid'; cnt.textContent=list.length; } else cnt.style.display='none'; }
+  if(!list.length){ el.innerHTML='<div class="empty-box"><div class="empty-emoji">📦</div>এখনো কোনো অর্ডার নেই।<br>প্রথম কেকটি অর্ডার করুন!</div>'; return; }
+  el.innerHTML = list.slice().reverse().map(o=>`
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow-sm)">
+      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><b style="color:var(--chocolate)">${o.id}</b><small style="color:var(--muted)">${new Date(o.createdAt).toLocaleDateString('bn-BD')}</small></div>
+      <div style="font-size:.85rem;color:var(--chocolate-soft);margin:8px 0">${o.items.map(i=>`${i.name} (${i.size}) ×${i.qty}`).join(', ')}</div>
+      <div style="font-size:.8rem;color:var(--muted)">${o.name} • ${o.phone} • ${o.date}</div>
+      <div style="margin-top:8px"><span class="status-pill" style="font-size:.72rem">${o.status}</span></div>
+    </div>`).join('');
+}
+function clearOrders(){ if(confirm('সব অর্ডার মুছে ফেলবেন?')){ save("sairahBakes_orders", []); renderOrders(); toast('অর্ডার হিস্ট্রি মুছে ফেলা হয়েছে','info'); } }
+/* PWA install */
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; const btn=document.getElementById('pwaBtn'); if(btn) btn.style.display='inline-flex'; });
+function installPWA(){ if(deferredPrompt){ deferredPrompt.prompt(); deferredPrompt.userChoice.then(()=>{deferredPrompt=null; document.getElementById('pwaBtn').style.display='none';}); } else toast('ব্রাউজার মেনু থেকে Install করুন','info'); }
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('data:text/javascript;base64,'+btoa("self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>self.clients.claim());self.addEventListener('fetch',e=>e.respondWith(fetch(e.request).catch(()=>caches.match(e.request))));")).catch(()=>{}); }
+
 /* ==================== BOOT ==================== */
 initConfig();
 renderProducts();
 renderCart();
+renderOrders();
 buildHeroCakes();
 observeReveals();
 </script>
