@@ -447,7 +447,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 /* Policy */
 .policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .policy-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow-sm)}
-.policy-card h4{color:var(--chocolate);margin-bottom:8px;font-size:1rem}
+.policy-card h4{color:var(--chocolate);margin-bottom:8px;font-size:1rem;display:flex;align-items:center;gap:8px}
+.policy-card h4 svg{width:20px;height:20px;flex-shrink:0}
 .policy-card p{font-size:.85rem;color:var(--muted);line-height:1.7}
 .policy-card ul{margin:8px 0 0 18px;font-size:.85rem;color:var(--muted);line-height:1.7}
 @media(max-width:640px){.policy-grid{grid-template-columns:1fr}}
@@ -713,10 +714,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <p class="section-sub reveal reveal-delay-2">রংপুরে ক্যাশ অন ডেলিভারি — স্বচ্ছ ও সহজ নীতি।</p>
     </div>
     <div class="policy-grid">
-      <div class="policy-card reveal"><h4>✅ কনফার্মেশন</h4><p>অর্ডারের পর হোয়াটসঅ্যাপ/কলে কনফার্ম করা হয়। কনফার্মের পরই বেকিং শুরু।</p></div>
-      <div class="policy-card reveal reveal-delay-1"><h4>❌ ক্যান্সেল</h4><p>কনফার্মের <b>২ ঘণ্টার মধ্যে</b> ফ্রি ক্যান্সেল। এর পর বেকিং শুরু হলে ক্যান্সেল সম্ভব নয়।</p></div>
-      <div class="policy-card reveal"><h4>🔄 রিফান্ড</h4><p>ক্যাশ অন ডেলিভারি — অগ্রিম নেওয়া হয় না, তাই রিফান্ড প্রযোজ্য নয়। ডেলিভারি চার্জ অগ্রিম দিয়ে থাকলে ভুল/ক্ষতিতে <b>১০০% ফেরত</b>।</p></div>
-      <div class="policy-card reveal reveal-delay-1"><h4>🚚 ক্ষতি/ভুল</h4><p>ডেলিভারিতে ক্ষতি বা ভুল ডিজাইন হলে ছবি পাঠান — <b>২৪ ঘণ্টায় রিপ্লেসমেন্ট বা ফুল রিফান্ড</b>।</p></div>
+      <div class="policy-card reveal"><h4><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg> কনফার্মেশন</h4><p>অর্ডারের পর হোয়াটসঅ্যাপ/কলে কনফার্ম করা হয়। কনফার্মের পরই বেকিং শুরু।</p></div>
+      <div class="policy-card reveal reveal-delay-1"><h4><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="8" x2="16" y2="16"/><line x1="16" y1="8" x2="8" y2="16"/></svg> ক্যান্সেল</h4><p>কনফার্মের <b>২ ঘণ্টার মধ্যে</b> ফ্রি ক্যান্সেল। এর পর বেকিং শুরু হলে ক্যান্সেল সম্ভব নয়।</p></div>
+      <div class="policy-card reveal"><h4><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-8.35 4.5"/><path d="M12 2v4"/><path d="M12 2l3 3"/><path d="M12 22a10 10 0 0 0 8.35-4.5"/><path d="M12 22v-4"/><path d="M12 22l-3-3"/></svg> রিফান্ড</h4><p>ক্যাশ অন ডেলিভারি — অগ্রিম নেওয়া হয় না, তাই রিফান্ড প্রযোজ্য নয়। ডেলিভারি চার্জ অগ্রিম দিয়ে থাকলে ভুল/ক্ষতিতে <b>১০০% ফেরত</b>।</p></div>
+      <div class="policy-card reveal reveal-delay-1"><h4><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="13" height="9" rx="1"/><path d="M14 11h4l3 4v1h-7z"/><circle cx="5.5" cy="18.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="17.5" cy="18.5" r="1.5" fill="currentColor" stroke="none"/></svg> ক্ষতি/ভুল</h4><p>ডেলিভারিতে ক্ষতি বা ভুল ডিজাইন হলে ছবি পাঠান — <b>২৪ ঘণ্টায় রিপ্লেসমেন্ট বা ফুল রিফান্ড</b>।</p></div>
     </div>
     <p style="text-align:center;margin-top:18px;font-size:.82rem;color:var(--muted)">যেকোনো সমস্যায় হোয়াটসঅ্যাপে মেসেজ করুন — আমরা দ্রুত সমাধান করি।</p>
   </div>
