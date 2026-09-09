@@ -978,10 +978,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 ===================================================================== */
 const BUSINESS_CONFIG = {
     name: "Baked with Sairah",
-    phone: "8801712345678",
-    whatsapp: "8801712345678",
-    bikash: "01712345678",
-    nagad: "01712345678",
+    phone: "8801410882562",
+    whatsapp: "8801410882562",
+    bikash: "01410882562",
+    nagad: "01410882562",
     facebook: "https://facebook.com/",
     instagram: "https://instagram.com/",
     address: "Dhap Hajipara Mor, Rangpur Sadar, Rangpur",
@@ -1287,7 +1287,7 @@ function showConfirmation(o){
     <div class="srow"><span>পেমেন্ট</span><span>${payLine}</span></div>
     <div class="srow"><span>মূল্য</span><span>হোয়াটসঅ্যাপে জানানো হবে</span></div>
     <div class="srow"><span>ডেলিভারি</span><span>রংপুরে হোম ডেলিভারি</span></div>`;
-  const msg = `হ্যালো ${BUSINESS_CONFIG.name}! 🎂 নতুন অর্ডার\n--------------------------\nঅর্ডার আইডি: ${o.id}\nনাম: ${o.name}\nফোন: ${o.phone}\nকেক: ${o.items.map(i=>`${i.name} (${i.size})`).join(", ")}\nপরিমাণ: ${o.items.reduce((a,i)=>a+i.qty,0)}\nডেলিভারি তারিখ: ${o.date}\nঠিকানা: ${o.address}\nপেমেন্ট: ক্যাশ অন ডেলিভারি (দাম হোয়াটসঅ্যাপে)\nঅবস্থা: ${o.status}\n--------------------------\nঅনুগ্রহ করে আমার অর্ডারটি কনফার্ম করুন। ধন্যবাদ! ❤️`;
+  const msg = `🎂 *${BUSINESS_CONFIG.name} - নতুন অর্ডার* 🎂\n━━━━━━━━━━━━━━━━━━━━\n🆔 *অর্ডার আইডি:* ${o.id}\n👤 *নাম:* ${o.name}\n📞 *ফোন:* ${o.phone}\n🎂 *কেক:* ${o.items.map(i=>`${i.name} (${i.size}) ×${i.qty}`).join(", ")}\n🔢 *পরিমাণ:* ${o.items.reduce((a,i)=>a+i.qty,0)} টি\n📅 *ডেলিভারি তারিখ:* ${o.date}\n📍 *ঠিকানা:* ${o.address}\n📝 *নোট:* ${o.notes || "-"}\n💳 *পেমেন্ট:* ক্যাশ অন ডেলিভারি (দাম হোয়াটসঅ্যাপে আলোচনা)\n━━━━━━━━━━━━━━━━━━━━\n✅ অনুগ্রহ করে অর্ডারটি কনফার্ম করুন। ধন্যবাদ! 🙏`;
   dWaBtn.href = "https://wa.me/" + BUSINESS_CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
   openModal("doneModal");
   toast("অর্ডার " + o.id + " সেভ করা হয়েছে ✅","success");
@@ -1298,7 +1298,7 @@ function submitCustom(e){
   e.preventDefault();
   if(!cFlavor.value || !cSize.value || !cDesign.value.trim() || !cDate.value)
     return toast("সব প্রয়োজনীয় ঘর পূরণ করুন","error"), false;
-  const msg = `হ্যালো ${BUSINESS_CONFIG.name}! 🎂 কাস্টম কেক রিকোয়েস্ট\n--------------------------\nফ্লেভার: ${cFlavor.value}\nসাইজ: ${cSize.value}\nডিজাইন: ${cDesign.value}\nলেখা: ${cWriting.value || "-"}\nডেলিভারি তারিখ: ${cDate.value}\nনোট: ${cNotes.value || "-"}\n--------------------------\nPlease confirm price & availability. Thank you! ❤️`;
+  const msg = `🎂 *${BUSINESS_CONFIG.name} - কাস্টম কেক রিকোয়েস্ট* 🎂\n━━━━━━━━━━━━━━━━━━━━\n🎨 *ফ্লেভার:* ${cFlavor.value}\n📏 *সাইজ:* ${cSize.value}\n✨ *ডিজাইন:* ${cDesign.value}\n✍️ *লেখা:* ${cWriting.value || "-"}\n📅 *ডেলিভারি তারিখ:* ${cDate.value}\n📝 *নোট:* ${cNotes.value || "-"}\n━━━━━━━━━━━━━━━━━━━━\nPlease confirm price & availability. Thank you! ❤️`;
   const reqs = load("bakedWithSairah_custom", []); reqs.push({ at:new Date().toISOString(), flavor:cFlavor.value, size:cSize.value, design:cDesign.value });
   save("bakedWithSairah_custom", reqs);
   window.open("https://wa.me/" + BUSINESS_CONFIG.whatsapp + "?text=" + encodeURIComponent(msg), "_blank");
