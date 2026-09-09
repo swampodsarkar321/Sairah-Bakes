@@ -688,7 +688,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
               <select id="cFlavor" required><option value="">ফ্লেভার নির্বাচন করুন</option><option>চকলেট</option><option>ভ্যানিলা</option><option>রেড ভেলভেট</option><option>ব্ল্যাক ফরেস্ট</option><option>বাটারস্কচ</option><option>স্ট্রবেরি</option><option>লেমন</option><option>কফি / মোচা</option></select>
             </div>
             <div class="field"><label>সাইজ / ওজন *</label>
-              <select id="cSize" required><option value="">সাইজ নির্বাচন করুন</option><option>৫০০গ্রাম (৬-৮ জন)</option><option>১ কেজি (১২-১৫ জন)</option><option>১.৫ কেজি (১৮-২২ জন)</option><option>২ কেজি (২৫-৩০ জন)</option><option>৩ কেজি+ / ২-স্তর (বিয়ে)</option></select>
+              <select id="cSize" required><option value="">সাইজ নির্বাচন করুন</option><option>০.৫ পাউন্ড (৪-৬ জন)</option><option>১ পাউন্ড (৮-১০ জন)</option><option>১.৫ পাউন্ড (১২-১৫ জন)</option><option>২ পাউন্ড (১৮-২০ জন)</option><option>৩ পাউন্ড</option><option>৪ পাউন্ড</option><option>৫ পাউন্ড</option></select>
             </div>
             <div class="field full"><label>ডিজাইনের বর্ণনা *</label><input id="cDesign" placeholder="যেমন — গোলাপি প্রজাপতি থিম, বাচ্চাদের গাড়ি থিম..." required /></div>
             <div class="field"><label>কেকে কী লিখবেন?</label><input id="cWriting" placeholder="যেমন — শুভ জন্মদিন আয়শা" /></div>
@@ -990,16 +990,16 @@ const BUSINESS_CONFIG = {
     freeDeliveryOver: 3000
 };
 
-const SIZE_MULT = { "500g":1, "1kg":1.85, "1.5kg":2.6, "2kg":3.3, "3kg":4.8, "4kg":6.2, "5kg":7.5 };
+const SIZE_MULT = { "0.5 Pound":1, "1 Pound":1.85, "1.5 Pound":2.6, "2 Pound":3.3, "3 Pound":4.8, "4 Pound":6.2, "5 Pound":7.5 };
 const CAKES = [
-  { id:1, name:"ভ্যানিলা কেক", flavor:"ক্লাসিক ভ্যানিলা", base:550, cat:"classic", badge:"ক্লাসিক", desc:"হালকা ও ফ্লাফি ভ্যানিলা স্পঞ্জ, ফ্রেশ ক্রিমে ভরপুর।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1562440499-64c9a111f713?q=80&w=800&auto=format&fit=crop" },
-  { id:2, name:"চকলেট কেক", flavor:"রিচ বেলজিয়ান চকলেট", base:650, cat:"chocolate", badge:"বেস্টসেলার", desc:"নরম চকলেট স্পঞ্জ, গানাশ ও চকো চিপসে ভরা।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" },
-  { id:3, name:"অরেঞ্জ কেক", flavor:"টক-মিষ্টি অরেঞ্জ", base:600, cat:"classic", badge:"ফ্রেশ", desc:"সতেজ কমলার ফ্লেভারে হালকা ও জুসি স্পঞ্জ।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=800&auto=format&fit=crop" },
-  { id:4, name:"ব্ল্যাক ফরেস্ট কেক", flavor:"চকলেট + চেরি", base:750, cat:"chocolate", badge:"চেরি সহ", desc:"চকলেট, হুইপড ক্রিম, চেরি ও শেভিংসের ক্লাসিক কম্বিনেশন।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=800&auto=format&fit=crop" },
-  { id:5, name:"হোয়াইট ফরেস্ট কেক", flavor:"ভ্যানিলা + হোয়াইট চকলেট", base:750, cat:"premium", badge:"প্রিমিয়াম", desc:"হোয়াইট চকলেট, ভ্যানিলা ক্রিম ও চেরির প্রিমিয়াম লেয়ার।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=800&auto=format&fit=crop" },
-  { id:6, name:"রসমালাই কেক", flavor:"রসমালাই ও পেস্তা", base:850, cat:"premium", badge:"স্পেশাল", desc:"রসমালাইয়ের মোলায়েম স্বাদ, পেস্তা ও ক্রিমে ভরপুর স্পেশাল কেক।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1557925923-cd4648e211a0?q=80&w=800&auto=format&fit=crop" },
-  { id:7, name:"অথেনটিক রেড ভেলভেট কেক", flavor:"অরিজিনাল ক্রিম চিজ", base:950, cat:"premium", badge:"অথেনটিক", desc:"অথেনটিক রেসিপিতে প্রিমিয়াম কোকো ও অরিজিনাল ক্রিম চিজ ফ্রস্টিং।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1586788680434-30d324b2d46f?q=80&w=800&auto=format&fit=crop" },
-  { id:8, name:"নরমাল রেড ভেলভেট কেক", flavor:"ক্লাসিক রেড ভেলভেট", base:700, cat:"classic", badge:"রেগুলার", desc:"নরম রেড ভেলভেট স্পঞ্জ, হালকা ক্রিমে ক্লাসিক স্বাদ।", sizes:["500g","1kg","1.5kg","2kg"], img:"https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=800&auto=format&fit=crop" },
+  { id:1, name:"ভ্যানিলা কেক", flavor:"ক্লাসিক ভ্যানিলা", base:550, cat:"classic", badge:"ক্লাসিক", desc:"হালকা ও ফ্লাফি ভ্যানিলা স্পঞ্জ, ফ্রেশ ক্রিমে ভরপুর।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1562440499-64c9a111f713?q=80&w=800&auto=format&fit=crop" },
+  { id:2, name:"চকলেট কেক", flavor:"রিচ বেলজিয়ান চকলেট", base:650, cat:"chocolate", badge:"বেস্টসেলার", desc:"নরম চকলেট স্পঞ্জ, গানাশ ও চকো চিপসে ভরা।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" },
+  { id:3, name:"অরেঞ্জ কেক", flavor:"টক-মিষ্টি অরেঞ্জ", base:600, cat:"classic", badge:"ফ্রেশ", desc:"সতেজ কমলার ফ্লেভারে হালকা ও জুসি স্পঞ্জ।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=800&auto=format&fit=crop" },
+  { id:4, name:"ব্ল্যাক ফরেস্ট কেক", flavor:"চকলেট + চেরি", base:750, cat:"chocolate", badge:"চেরি সহ", desc:"চকলেট, হুইপড ক্রিম, চেরি ও শেভিংসের ক্লাসিক কম্বিনেশন।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=800&auto=format&fit=crop" },
+  { id:5, name:"হোয়াইট ফরেস্ট কেক", flavor:"ভ্যানিলা + হোয়াইট চকলেট", base:750, cat:"premium", badge:"প্রিমিয়াম", desc:"হোয়াইট চকলেট, ভ্যানিলা ক্রিম ও চেরির প্রিমিয়াম লেয়ার।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=800&auto=format&fit=crop" },
+  { id:6, name:"রসমালাই কেক", flavor:"রসমালাই ও পেস্তা", base:850, cat:"premium", badge:"স্পেশাল", desc:"রসমালাইয়ের মোলায়েম স্বাদ, পেস্তা ও ক্রিমে ভরপুর স্পেশাল কেক।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1557925923-cd4648e211a0?q=80&w=800&auto=format&fit=crop" },
+  { id:7, name:"অথেনটিক রেড ভেলভেট কেক", flavor:"অরিজিনাল ক্রিম চিজ", base:950, cat:"premium", badge:"অথেনটিক", desc:"অথেনটিক রেসিপিতে প্রিমিয়াম কোকো ও অরিজিনাল ক্রিম চিজ ফ্রস্টিং।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1586788680434-30d324b2d46f?q=80&w=800&auto=format&fit=crop" },
+  { id:8, name:"নরমাল রেড ভেলভেট কেক", flavor:"ক্লাসিক রেড ভেলভেট", base:700, cat:"classic", badge:"রেগুলার", desc:"নরম রেড ভেলভেট স্পঞ্জ, হালকা ক্রিমে ক্লাসিক স্বাদ।", sizes:["0.5 Pound","1 Pound","1.5 Pound","2 Pound"], img:"https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=800&auto=format&fit=crop" },
 ];
 
 /* ==================== STATE & STORAGE ==================== */
@@ -1078,7 +1078,7 @@ function renderProducts(){
     </div>`).join("");
 }
 function unitPrice(cake, size){
-  const key = (size||"").split(" ")[0];
+  const key = Object.keys(SIZE_MULT).find(k => (size||"").startsWith(k)) || "1 Pound";
   return Math.round(cake.base * (SIZE_MULT[key] || 1));
 }
 
